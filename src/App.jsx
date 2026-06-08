@@ -438,47 +438,61 @@ export default function App() {
 
           {/* Hero Quick Badge Overlay */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl max-w-xs w-full text-slate-100 flex flex-col gap-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 bg-pga-blue rounded-xl flex items-center justify-center font-extrabold text-white text-lg">PGA</div>
-                <div>
-                  <div className="font-outfit font-extrabold text-sm">PT. Perfect Garment</div>
-                  <div className="text-[9px] uppercase tracking-wider text-pga-gray font-bold">Accessories</div>
-                </div>
-              </div>
+            <div className="relative p-8 rounded-3xl max-w-xs w-full text-white flex flex-col gap-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden group border border-white/10 hover:border-white/20 transition-all duration-500">
+              {/* Glass Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-xl z-0"></div>
               
-              <div className="h-px bg-white/10"></div>
-              
-              <div className="space-y-4">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-400 font-medium">{t('hero.card.estYear')}</span>
-                  <span className="font-bold text-white">2018</span>
+              {/* Glossy reflection highlight */}
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent opacity-50 z-0 pointer-events-none"></div>
+
+              {/* Glow effect */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-pga-blue rounded-full blur-[50px] opacity-60 z-0 transition-opacity duration-500 group-hover:opacity-80"></div>
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-pga-teal rounded-full blur-[50px] opacity-30 z-0 transition-opacity duration-500 group-hover:opacity-50"></div>
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 bg-gradient-to-br from-pga-blue to-pga-blue-hover rounded-2xl flex items-center justify-center font-extrabold text-white text-xl shadow-[0_0_15px_rgba(1,53,154,0.5)]">
+                    PGA
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="font-outfit font-extrabold text-sm tracking-wide">PT. Perfect Garment</div>
+                    <div className="text-[9px] uppercase tracking-[0.2em] text-blue-200 font-bold mt-0.5">Accessories</div>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-400 font-medium">{t('hero.card.location')}</span>
-                  <span className="font-bold text-white">Sumedang, ID</span>
+                
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-300 font-medium tracking-wide">{t('hero.card.estYear')}</span>
+                    <span className="font-bold text-white bg-white/10 px-2 py-0.5 rounded text-[10px]">2018</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-300 font-medium tracking-wide">{t('hero.card.location')}</span>
+                    <span className="font-bold text-white">Sumedang, ID</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-300 font-medium tracking-wide">{t('hero.card.compliance')}</span>
+                    <span className="font-bold text-emerald-400 flex items-center gap-1.5 bg-emerald-400/10 px-2 py-0.5 rounded text-[10px] border border-emerald-400/20">
+                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_5px_rgba(52,211,153,0.8)]"></span>
+                      {t('hero.card.audited')}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-400 font-medium">{t('hero.card.compliance')}</span>
-                  <span className="font-bold text-pga-teal flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-pga-teal rounded-full animate-pulse"></span>
-                    {t('hero.card.audited')}
-                  </span>
+
+                {/* Slider Dots */}
+                <div className="flex justify-center gap-2 mt-2 pt-2 border-t border-white/5">
+                  {heroSlides.map((_, idx) => (
+                    <button 
+                      key={idx}
+                      aria-label={`Go to slide ${idx + 1}`}
+                      onClick={() => setHeroSlideIdx(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${heroSlideIdx === idx ? 'w-6 bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]' : 'w-2 bg-white/30 hover:bg-white/50'}`}
+                    />
+                  ))}
                 </div>
               </div>
-
-              {/* Slider Dots */}
-              <div className="flex justify-center gap-2 mt-2">
-                {heroSlides.map((_, idx) => (
-                  <button 
-                    key={idx}
-                    aria-label={`Go to slide ${idx + 1}`}
-                    onClick={() => setHeroSlideIdx(idx)}
-                    className={`h-2 rounded-full transition-all ${heroSlideIdx === idx ? 'w-6 bg-pga-blue' : 'w-2 bg-slate-600'}`}
-                  />
-                ))}
-              </div>
-
             </div>
           </div>
 
