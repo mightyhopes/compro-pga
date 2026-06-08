@@ -12,6 +12,12 @@ export default {
         outfit: ['Outfit', 'sans-serif'],
       },
       colors: {
+        slate: {
+          350: '#cbd5e1', // Same as 300
+          450: '#94a3b8', // Same as 400
+          650: '#475569', // Same as 600
+          850: '#1e293b', // slate-800 equivalent for good contrast
+        },
         pga: {
           blue: '#01359a', // Corporate Blue
           'blue-hover': '#012873',

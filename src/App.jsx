@@ -346,7 +346,7 @@ export default function App() {
             {/* Dark Mode Toggle */}
             <button 
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-full border bg-white/70 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all shadow-sm ${navScrolled ? 'border-slate-350 dark:border-slate-700 text-slate-800 dark:text-white' : 'border-white/20 text-slate-800'}`}
+              className={`p-2 rounded-full border bg-white/70 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all shadow-sm ${navScrolled ? 'border-slate-350 dark:border-slate-700 text-slate-800 dark:text-white' : 'border-white/20 text-slate-800 dark:text-white'}`}
               title="Toggle Theme"
             >
               {darkMode ? <SunIcon /> : <MoonIcon />}
@@ -392,13 +392,13 @@ export default function App() {
         
         {/* Full-screen Crossfade Slideshow */}
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false}>
             <motion.div
               key={heroSlideIdx}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="absolute inset-0 w-full h-full"
             >
               <img 
@@ -956,7 +956,7 @@ export default function App() {
             {/* GRS Certificate */}
             <div 
               onClick={() => { setSelectedCertificate({ type: 'grs', page: 1 }); setCertImageLoading(true); }}
-              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
                 <ImageWithSkeleton src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -976,7 +976,7 @@ export default function App() {
             {/* OEKO-TEX Certificate */}
             <div 
               onClick={() => { setSelectedCertificate({ type: 'oeko', page: 1 }); setCertImageLoading(true); }}
-              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
                 <ImageWithSkeleton src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -996,7 +996,7 @@ export default function App() {
             {/* SLF Certificate */}
             <div 
               onClick={() => { setSelectedCertificate({ type: 'slf', page: 1 }); setCertImageLoading(true); }}
-              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
                 <ImageWithSkeleton src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -1029,7 +1029,7 @@ export default function App() {
               <span className="text-sm font-bold text-pga-blue dark:text-pga-blue-light uppercase tracking-wider mb-2">
                 {t('contact.title')}
               </span>
-              <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl mb-6 text-slate-850 dark:text-white">
+              <h2 className="font-outfit font-extrabold text-3xl sm:text-4xl mb-6 text-slate-800 dark:text-white">
                 {t('contact.subtitle')}
               </h2>
               
@@ -1067,14 +1067,14 @@ export default function App() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     
                     {/* Welly */}
-                    <div className="p-4 rounded-xl bg-white dark:bg-slate-850 border border-slate-200/50 dark:border-slate-800 shadow-sm">
+                    <div className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/50 dark:border-slate-700 shadow-sm">
                       <div className="font-bold text-sm text-slate-800 dark:text-white">Welly</div>
                       <a href="tel:081298313588" className="text-xs text-pga-blue dark:text-pga-blue-light hover:underline block mt-1 font-bold">081298313588</a>
                       <a href="mailto:welly@dingxingtrims.com" className="text-[10px] text-slate-500 dark:text-slate-400 hover:underline block mt-0.5">welly@dingxingtrims.com</a>
                     </div>
 
                     {/* Wang Jianrong */}
-                    <div className="p-4 rounded-xl bg-white dark:bg-slate-850 border border-slate-200/50 dark:border-slate-800 shadow-sm">
+                    <div className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/50 dark:border-slate-700 shadow-sm">
                       <div className="font-bold text-sm text-slate-800 dark:text-white">Wang Jianrong</div>
                       <a href="tel:087808235700" className="text-xs text-pga-blue dark:text-pga-blue-light hover:underline block mt-1 font-bold">087808235700</a>
                       <a href="mailto:jianrong@dingxingtrims.com" className="text-[10px] text-slate-500 dark:text-slate-400 hover:underline block mt-0.5">jianrong@dingxingtrims.com</a>
@@ -1091,8 +1091,8 @@ export default function App() {
 
             {/* Right Column: Inquiry Form with complete customer input fields */}
             <div className="lg:col-span-7">
-              <div className="bg-white dark:bg-slate-850 rounded-3xl p-8 lg:p-10 shadow-xl border border-slate-200/50 dark:border-slate-800/80">
-                <h3 className="font-outfit font-extrabold text-xl lg:text-2xl mb-6 text-slate-850 dark:text-white">{t('contact.formTitle')}</h3>
+              <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 lg:p-10 shadow-xl border border-slate-200/50 dark:border-slate-700">
+                <h3 className="font-outfit font-extrabold text-xl lg:text-2xl mb-6 text-slate-800 dark:text-white">{t('contact.formTitle')}</h3>
                 
                 <form onSubmit={handleInquirySubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -1104,7 +1104,7 @@ export default function App() {
                         type="text" 
                         id="name" 
                         required 
-                        className="w-full px-4 py-3 rounded-xl border border-slate-350 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
                       />
                     </div>
                     <div>
@@ -1115,7 +1115,7 @@ export default function App() {
                         type="email" 
                         id="email" 
                         required 
-                        className="w-full px-4 py-3 rounded-xl border border-slate-350 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
                       />
                     </div>
                   </div>
@@ -1128,7 +1128,7 @@ export default function App() {
                       type="text" 
                       id="phone" 
                       required 
-                      className="w-full px-4 py-3 rounded-xl border border-slate-350 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold" 
                     />
                   </div>
                   
@@ -1140,7 +1140,7 @@ export default function App() {
                       id="message" 
                       rows="5" 
                       required 
-                      className="w-full px-4 py-3 rounded-xl border border-slate-350 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-pga-blue dark:focus:ring-pga-blue-light transition-all text-sm font-semibold"
                     ></textarea>
                   </div>
 
