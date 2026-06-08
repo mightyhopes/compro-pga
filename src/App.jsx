@@ -934,63 +934,63 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* GRS Certificate */}
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col justify-between items-start hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white">
-              <div>
-                <span className="p-4 bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-350 rounded-2xl mb-6 inline-block">
-                  <ShieldCheckIcon />
-                </span>
-                <h3 className="font-outfit font-extrabold text-lg mb-3 text-slate-800 dark:text-white">{t('certs.grsTitle')}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  {t('certs.grsDesc')}
-                </p>
+            <div 
+              onClick={() => { setSelectedCertificate({ type: 'grs', page: 1 }); setCertImageLoading(true); }}
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+            >
+              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
+                <img src="/assets/certs/grs_page_1.jpg" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
+                    <ZoomInIcon />
+                    <span>{t('certs.viewCert')}</span>
+                  </span>
+                </div>
               </div>
-              <button 
-                onClick={() => { setSelectedCertificate({ type: 'grs', page: 1 }); setCertImageLoading(true); }}
-                className="text-xs font-bold text-pga-blue dark:text-pga-blue-light hover:underline flex items-center gap-1 mt-auto"
-              >
-                <span>{t('certs.viewCert')}</span>
-                <ArrowRightIcon />
-              </button>
+              <h3 className="font-outfit font-extrabold text-base mb-1.5 text-slate-800 dark:text-white group-hover:text-pga-blue transition-colors">{t('certs.grsTitle')}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                {t('certs.grsDesc')}
+              </p>
             </div>
 
             {/* OEKO-TEX Certificate */}
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col justify-between items-start hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white">
-              <div>
-                <span className="p-4 bg-pga-blue-light dark:bg-pga-blue/20 text-pga-blue dark:text-pga-blue-light rounded-2xl mb-6 inline-block">
-                  <ShieldCheckIcon />
-                </span>
-                <h3 className="font-outfit font-extrabold text-lg mb-3 text-slate-800 dark:text-white">{t('certs.oekoTitle')}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  {t('certs.oekoDesc')}
-                </p>
+            <div 
+              onClick={() => { setSelectedCertificate({ type: 'oeko', page: 1 }); setCertImageLoading(true); }}
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+            >
+              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
+                <img src="/assets/certs/oeko_page_1.jpg" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
+                    <ZoomInIcon />
+                    <span>{t('certs.viewCert')}</span>
+                  </span>
+                </div>
               </div>
-              <button 
-                onClick={() => { setSelectedCertificate({ type: 'oeko', page: 1 }); setCertImageLoading(true); }}
-                className="text-xs font-bold text-pga-blue dark:text-pga-blue-light hover:underline flex items-center gap-1 mt-auto"
-              >
-                <span>{t('certs.viewCert')}</span>
-                <ArrowRightIcon />
-              </button>
+              <h3 className="font-outfit font-extrabold text-base mb-1.5 text-slate-800 dark:text-white group-hover:text-pga-blue transition-colors">{t('certs.oekoTitle')}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                {t('certs.oekoDesc')}
+              </p>
             </div>
 
             {/* SLF Certificate */}
-            <div className="glass-card p-8 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col justify-between items-start hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white">
-              <div>
-                <span className="p-4 bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-300 rounded-2xl mb-6 inline-block">
-                  <ShieldCheckIcon />
-                </span>
-                <h3 className="font-outfit font-extrabold text-lg mb-3 text-slate-800 dark:text-white">{t('certs.slfTitle')}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  {t('certs.slfDesc')}
-                </p>
+            <div 
+              onClick={() => { setSelectedCertificate({ type: 'slf', page: 1 }); setCertImageLoading(true); }}
+              className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
+            >
+              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
+                <img src="/assets/certs/slf_page_1.jpg" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
+                    <ZoomInIcon />
+                    <span>{t('certs.viewCert')}</span>
+                  </span>
+                </div>
               </div>
-              <button 
-                onClick={() => { setSelectedCertificate({ type: 'slf', page: 1 }); setCertImageLoading(true); }}
-                className="text-xs font-bold text-pga-blue dark:text-pga-blue-light hover:underline flex items-center gap-1 mt-auto"
-              >
-                <span>{t('certs.viewCert')}</span>
-                <ArrowRightIcon />
-              </button>
+              <h3 className="font-outfit font-extrabold text-base mb-1.5 text-slate-800 dark:text-white group-hover:text-pga-blue transition-colors">{t('certs.slfTitle')}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                {t('certs.slfDesc')}
+              </p>
             </div>
 
           </div>
