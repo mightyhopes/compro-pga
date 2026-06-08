@@ -126,6 +126,26 @@ const useIntersectionObserver = (options = {}) => {
   return [elementRef, isVisible];
 };
 
+// Image component with Skeleton Loader
+const ImageWithSkeleton = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-slate-300 dark:bg-slate-700 animate-pulse"></div>
+      )}
+      <img 
+        src={src} 
+        alt={alt} 
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}
+      />
+    </div>
+  );
+};
+
 export default function App() {
   const [lang, setLang] = useState('en');
   const [darkMode, setDarkMode] = useState(false);
@@ -475,18 +495,16 @@ export default function App() {
             {/* Left Column: Visual Stack using Real Factory Assets */}
             <div className="lg:col-span-5 grid grid-cols-12 gap-4 relative">
               <div className="col-span-12 rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[1.5/1] bg-slate-100 dark:bg-slate-950">
-                <img 
+                <ImageWithSkeleton 
                   src="/assets/products/whatsapp_2.webp" 
                   alt="PGA Factory Needle Loom Room" 
-                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
               <div className="col-span-7 col-start-6 -mt-16 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-900 aspect-[1.1/1] relative z-10 bg-slate-200 dark:bg-slate-800">
-                <img 
+                <ImageWithSkeleton 
                   src="/assets/details/detail_1.webp" 
                   alt="PGA Active Weaving Machine Floor" 
-                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -635,17 +653,17 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
                       {/* Main Drawcord image */}
                       <div className="sm:col-span-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.8/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord.webp" alt="Drawcords collection" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/products/drawcord.webp" alt="Drawcords collection" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Braided Drawcords</span>
                       </div>
                       {/* Metal Ending */}
                       <div className="sm:col-span-6 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord_metal.webp" alt="Drawcord with metal ending" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/products/drawcord_metal.webp" alt="Drawcord with metal ending" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Metal End Tips</span>
                       </div>
                       {/* Clear Plastic Ending */}
                       <div className="sm:col-span-6 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord_plastic.webp" alt="Drawcord with clear plastic ending" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/products/drawcord_plastic.webp" alt="Drawcord with clear plastic ending" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Plastic End Tips</span>
                       </div>
                     </div>
@@ -655,12 +673,12 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
                       {/* Elastic Band */}
                       <div className="sm:col-span-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/elastic_band.webp" alt="Elastic Band" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/products/elastic_band.webp" alt="Elastic Band" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-1 rounded-md">Elastic Band Rolls</span>
                       </div>
                       {/* Elastic Woven */}
                       <div className="sm:col-span-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/elastic_woven.webp" alt="Elastic Woven" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/products/elastic_woven.webp" alt="Elastic Woven" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-1 rounded-md">Woven Elastics</span>
                       </div>
                     </div>
@@ -670,15 +688,15 @@ export default function App() {
                   {activeProductTab === 'tape' && (
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/factory/factory_1.webp" alt="Blue ribbon tape" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/factory/factory_1.webp" alt="Blue ribbon tape" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Blue Flat Ribbon</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/factory/factory_3.webp" alt="Checkerboard tape" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/factory/factory_3.webp" alt="Checkerboard tape" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Checkerboard Ribbon</span>
                       </div>
                       <div className="col-span-2 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[2.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_9.webp" alt="Striped cotton webbings" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/details/detail_9.webp" alt="Striped cotton webbings" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Striped Cotton Webbings</span>
                       </div>
                     </div>
@@ -687,15 +705,15 @@ export default function App() {
                   {activeProductTab === 'herringbone' && (
                     <div className="grid grid-cols-2 gap-4">
                       <div className="col-span-2 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[2.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_6.webp" alt="Herringbone twill weave close-up" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/details/detail_6.webp" alt="Herringbone twill weave close-up" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Herringbone Twill Weave</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_7.webp" alt="Beige herringbone V twill pattern" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/details/detail_7.webp" alt="Beige herringbone V twill pattern" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Twill V-Pattern</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_5.webp" alt="Multi color narrow webbing spools" className="w-full h-full object-cover" />
+                        <ImageWithSkeleton src="/assets/details/detail_5.webp" alt="Multi color narrow webbing spools" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Color Spools</span>
                       </div>
                     </div>
@@ -754,10 +772,9 @@ export default function App() {
                   onClick={() => setSelectedGalleryItem(item)}
                   className="group relative rounded-2xl overflow-hidden shadow-md border border-slate-200/50 dark:border-slate-800 aspect-[1.1/1] cursor-pointer bg-slate-100 dark:bg-slate-950"
                 >
-                  <img 
+                  <ImageWithSkeleton 
                     src={item.path} 
                     alt={item.tag} 
-                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
                   {/* Hover overlay */}
@@ -787,10 +804,9 @@ export default function App() {
         
         {/* Machine image backdrop */}
         <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
-          <img 
+          <ImageWithSkeleton 
             src="/assets/products/whatsapp_2.webp" 
             alt="Factory production line" 
-            loading="lazy"
             className="w-full h-full object-cover filter blur-[1px]" 
           />
         </div>
@@ -864,18 +880,16 @@ export default function App() {
             {/* Right Column: Visual Showcase of Real Machines */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg aspect-[1/1.2] relative bg-slate-100 dark:bg-slate-950">
-                <img 
+                <ImageWithSkeleton 
                   src="/assets/products/whatsapp_3.webp" 
                   alt="Industrial needle loom machinery" 
-                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg aspect-[1/1.2] relative bg-slate-100 dark:bg-slate-950">
-                <img 
+                <ImageWithSkeleton 
                   src="/assets/products/whatsapp_4.webp" 
                   alt="High speed knitting machine" 
-                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -945,7 +959,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <ImageWithSkeleton src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -965,7 +979,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <ImageWithSkeleton src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -985,7 +999,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <ImageWithSkeleton src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
