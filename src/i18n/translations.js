@@ -4,6 +4,7 @@ export const translations = {
       home: "Home",
       about: "About Us",
       products: "Products",
+      gallery: "Gallery",
       capacity: "Capacity",
       certifications: "Certifications",
       contact: "Contact Us"
@@ -13,7 +14,13 @@ export const translations = {
       subtitle: "Your One-Stop Professional Haberdasher",
       slogan: "Service First, Excellence in Quality, and Mutual Success",
       exploreBtn: "Explore Products",
-      contactBtn: "Contact Us Now"
+      contactBtn: "Contact Us Now",
+      card: {
+        estYear: "Est. Year",
+        location: "Location",
+        compliance: "Audit Compliance",
+        audited: "H&M Audited"
+      }
     },
     about: {
       title: "About Us",
@@ -48,7 +55,7 @@ export const translations = {
       },
       tape: {
         title: "Tape / Pita",
-        desc: "High-quality tape products including herringbone tapes, webbing tapes, cotton tapes, and polyester tapes. These tapes provide superior strength, aesthetic appeal, and versatility for diverse applications.",
+        desc: "High-quality tape products including cotton tapes, polyester tapes, and customized ribbons. These tapes provide superior strength, aesthetic appeal, and versatility for diverse applications.",
         features: [
           "Used in garments, bags, footwear, and fashion accessories",
           "Custom widths, structures, and designs",
@@ -65,16 +72,25 @@ export const translations = {
         ]
       },
       herringbone: {
-        title: "Herringbone / Pita人字带",
-        desc: "Distinctive herringbone tapes combining high durability, versatility, and classic woven aesthetics. Perfect for structural reinforcement and fashion detailing.",
+        title: "Herringbone / Pita",
+        desc: "Distinctive herringbone tapes combining high durability, versatility, and classic V-shaped woven twill aesthetics. Perfect for structural reinforcement and fashion detailing.",
         features: [
           "Excellent for collar reinforcement, clothing labels, and packaging",
           "A wide range of widths, colors, and raw materials",
-          "Classic woven structure that enhances product value"
+          "Classic V-shape woven structure that enhances product value"
         ]
       },
+      inquireBtn: "Inquire or Request Samples",
       appShowcase: "Application Showcase",
       appDesc: "How our accessories are used in premium global fashion brands:"
+    },
+    gallery: {
+      title: "Interactive Gallery",
+      subtitle: "Explore our production floor, advanced machinery, and product catalog first-hand",
+      filterAll: "All Media",
+      filterProducts: "Products",
+      filterFactory: "Factory & Machines",
+      viewDetail: "View Image Details"
     },
     capacity: {
       title: "Production Capacity",
@@ -111,8 +127,9 @@ export const translations = {
       oekoDesc: "Certified for Product Class I (Baby Articles) - the strictest level. Guarantees that our accessories are free from harmful substances and safe for skin contact. Certificate: 26.MID.18587.",
       slfTitle: "Sertifikat Laik Fungsi (SLF)",
       slfDesc: "Indonesian building compliance certificate verifying structural, safety, and operational standards of our factory facility. Certificate No. SK-SLF-321124-31102025-001.",
-      viewCert: "View Document",
-      close: "Close"
+      viewCert: "View Original Document",
+      close: "Close",
+      pageOf: "page {{current}} of {{total}}"
     },
     contact: {
       title: "Contact Us",
@@ -123,11 +140,15 @@ export const translations = {
       formTitle: "Send an Inquiry",
       formName: "Full Name",
       formEmail: "Email Address",
+      formPhone: "Phone Number",
       formMsg: "Your Message",
       formSubmit: "Send Message",
       formSuccess: "Thank you! Your message has been sent. We will get back to you shortly.",
       contactPersons: "Contact Persons",
-      wechatQR: "WeChat Scan"
+      wechatQR: "WeChat Scan",
+      wechatInstructions: "Scan our WeChat QR code to connect directly with our sales team for instant support.",
+      sumedangFactory: "Sumedang Factory",
+      quickLinks: "Quick Links"
     }
   },
   zh: {
@@ -135,6 +156,7 @@ export const translations = {
       home: "首页",
       about: "关于我们",
       products: "核心产品",
+      gallery: "实景展示",
       capacity: "生产能力",
       certifications: "资质认证",
       contact: "联系我们"
@@ -144,18 +166,24 @@ export const translations = {
       subtitle: "您的一站式专业辅料供应商",
       slogan: "服务第一，质量至上，互利共赢",
       exploreBtn: "探索产品",
-      contactBtn: "立即联系"
+      contactBtn: "立即联系",
+      card: {
+        estYear: "成立年份",
+        location: "工厂地址",
+        compliance: "审计合规",
+        audited: "H&M 审核合格"
+      }
     },
     about: {
       title: "关于我们",
       subtitle: "我们是谁",
       p1: "PT. Perfect Garment Accessories (PGA) 是一家领先的服装辅料制造商，于2018年成立于印度尼西亚西爪哇省苏美当 (Sumedang)。我们专注于高品质抽绳、松紧带、弹力绳、人字带及各种规格织带的生产。",
-      p2: "我们拥有先进的专用生产设施和经验丰富的专业技术团队，以确保生产的一致性、持续改进和严格的质量控制。我们致力于提供卓越的价值，为客户量身定制解决方案，并建立互信、长期的全球合作伙伴关系。",
+      p2: "我们拥有先进的专用生产设施和经验丰富的专业技术团队，以确保生产的一致性、持续改进以及严格的质量控制。我们致力于提供卓越的价值，为客户量身定制解决方案，并建立互信、长期的全球合作伙伴关系。",
       tagline: "一站式服装辅料供应商",
       visionTitle: "我们的愿景",
       visionDesc: "成为全球服装辅料行业最值得信赖的合作伙伴，以卓越的品质、创新和可持续发展赢得认可。",
       missionTitle: "我们的使命",
-      missionDesc: "提供优质的产品与卓越的服务，维持严格的质量标准，为我们的客户和合作伙伴创造互利共赢。",
+      missionDesc: "提供优质的产品与卓越的服务，维持严格 of 质量标准，为我们的客户和合作伙伴创造互利共赢。",
       estYear: "成立年份",
       location: "印尼苏美当"
     },
@@ -179,7 +207,7 @@ export const translations = {
       },
       tape: {
         title: "织带 / Tape",
-        desc: "高品质织带系列，包括人字带、包边带、棉织带和涤纶织带。这些织带在各种应用中表现出卓越的强度、美感和通用性。",
+        desc: "高品质织带系列，包括棉织带、涤纶织带和定制织带。这些织带在各种应用中表现出卓越的强度、美感和通用性。",
         features: [
           "广泛应用于成衣、包袋、鞋类和时尚配件",
           "定制宽度、结构和图案设计",
@@ -197,15 +225,24 @@ export const translations = {
       },
       herringbone: {
         title: "人字带 / Herringbone",
-        desc: "经典的人字斜纹织带，集高耐用性、多功能性和独特的美学纹理于一身。非常适合服装的结构加固和细节装饰。",
+        desc: "经典的人字斜纹织带，集高耐用性、多功能性和经典V型斜纹编织美学于一身。非常适合服装的结构加固和细节装饰。",
         features: [
           "非常适合领口加固、服装标签和礼品包装",
           "提供丰富的宽度、颜色和原材料选择",
-          "经典织造工艺，显著提升成衣档次"
+          "经典V型织造工艺，显著提升成衣档次"
         ]
       },
+      inquireBtn: "咨询或索取样品",
       appShowcase: "应用实例展示",
       appDesc: "我们的辅料产品在全球知名服装品牌中的应用："
+    },
+    gallery: {
+      title: "实景展示画廊",
+      subtitle: "第一手探索我们的车间厂貌、先进设备与真实产品图册",
+      filterAll: "全部媒体",
+      filterProducts: "产品细节",
+      filterFactory: "厂房设备",
+      viewDetail: "查看大图"
     },
     capacity: {
       title: "生产能力",
@@ -242,8 +279,9 @@ export const translations = {
       oekoDesc: "已通过最严格的 I 级（婴儿用品）认证。确保我们的辅料不含任何有害物质，可安全接触婴儿皮肤。证书编号：26.MID.18587。",
       slfTitle: "印尼建筑合格证书 (SLF)",
       slfDesc: "由印尼政府颁发的建筑竣工合格证书，验证了我们苏美当工厂大楼在结构、消防及运营安全方面的合规性。证书号：SK-SLF-321124-31102025-001。",
-      viewCert: "查看证书",
-      close: "关闭"
+      viewCert: "查看证书原件",
+      close: "关闭",
+      pageOf: "第 {{current}} 页，共 {{total}} 页"
     },
     contact: {
       title: "联系我们",
@@ -254,11 +292,15 @@ export const translations = {
       formTitle: "发送您的询盘",
       formName: "您的姓名",
       formEmail: "邮箱地址",
+      formPhone: "电话号码",
       formMsg: "您的留言",
       formSubmit: "发送信息",
       formSuccess: "谢谢！您的留言已成功发送。我们会尽快回复您。",
       contactPersons: "联络负责人",
-      wechatQR: "微信扫码"
+      wechatQR: "微信扫码",
+      wechatInstructions: "扫描我们的微信二维码，直接与我们的销售团队联系，获取即时支持。",
+      sumedangFactory: "苏美当工厂",
+      quickLinks: "快速链接"
     }
   }
 };
