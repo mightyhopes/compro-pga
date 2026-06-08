@@ -141,9 +141,9 @@ export default function App() {
   // Hero slideshow (using clean machinery/factory floor images)
   const [heroSlideIdx, setHeroSlideIdx] = useState(0);
   const heroSlides = [
-    '/assets/products/whatsapp_2.jpeg',
-    '/assets/products/whatsapp_1.jpeg',
-    '/assets/details/detail_1.png',
+    '/assets/products/whatsapp_2.webp',
+    '/assets/products/whatsapp_1.webp',
+    '/assets/details/detail_1.webp',
   ];
 
   // Gallery filter state
@@ -220,30 +220,30 @@ export default function App() {
   // Consolidate gallery assets with correct filters and labels
   const galleryItems = [
     // Products (Cleaned paths matching verified filesystem content)
-    { id: 'p1', path: '/assets/products/drawcord.jpg', type: 'product', tag: 'Drawcords' },
-    { id: 'p2', path: '/assets/products/drawcord_metal.jpg', type: 'product', tag: 'Metal Tipped Cords' },
-    { id: 'p3', path: '/assets/products/drawcord_plastic.jpg', type: 'product', tag: 'Plastic Tipped Cords' },
-    { id: 'p4', path: '/assets/factory/factory_5.jpg', type: 'product', tag: 'Purple Cords' },
-    { id: 'p5', path: '/assets/products/elastic_band.jpg', type: 'product', tag: 'Elastic Bands' },
-    { id: 'p6', path: '/assets/products/elastic_woven.jpg', type: 'product', tag: 'Woven Elastics' },
-    { id: 'p7', path: '/assets/factory/factory_7.jpg', type: 'product', tag: 'Elastic Spools' },
-    { id: 'p8', path: '/assets/factory/factory_9.jpg', type: 'product', tag: 'Buttonhole Elastics' },
-    { id: 'p9', path: '/assets/factory/factory_1.jpg', type: 'product', tag: 'Blue Ribbon Tapes' },
-    { id: 'p10', path: '/assets/factory/factory_3.jpg', type: 'product', tag: 'Checkerboard Tapes' },
-    { id: 'p11', path: '/assets/details/detail_5.png', type: 'product', tag: 'Cotton Webbings' },
-    { id: 'p12', path: '/assets/details/detail_6.png', type: 'product', tag: 'Herringbone Tapes' },
-    { id: 'p13', path: '/assets/details/detail_9.png', type: 'product', tag: 'Striped Tapes' },
+    { id: 'p1', path: '/assets/products/drawcord.webp', type: 'product', tag: 'Drawcords' },
+    { id: 'p2', path: '/assets/products/drawcord_metal.webp', type: 'product', tag: 'Metal Tipped Cords' },
+    { id: 'p3', path: '/assets/products/drawcord_plastic.webp', type: 'product', tag: 'Plastic Tipped Cords' },
+    { id: 'p4', path: '/assets/factory/factory_5.webp', type: 'product', tag: 'Purple Cords' },
+    { id: 'p5', path: '/assets/products/elastic_band.webp', type: 'product', tag: 'Elastic Bands' },
+    { id: 'p6', path: '/assets/products/elastic_woven.webp', type: 'product', tag: 'Woven Elastics' },
+    { id: 'p7', path: '/assets/factory/factory_7.webp', type: 'product', tag: 'Elastic Spools' },
+    { id: 'p8', path: '/assets/factory/factory_9.webp', type: 'product', tag: 'Buttonhole Elastics' },
+    { id: 'p9', path: '/assets/factory/factory_1.webp', type: 'product', tag: 'Blue Ribbon Tapes' },
+    { id: 'p10', path: '/assets/factory/factory_3.webp', type: 'product', tag: 'Checkerboard Tapes' },
+    { id: 'p11', path: '/assets/details/detail_5.webp', type: 'product', tag: 'Cotton Webbings' },
+    { id: 'p12', path: '/assets/details/detail_6.webp', type: 'product', tag: 'Herringbone Tapes' },
+    { id: 'p13', path: '/assets/details/detail_9.webp', type: 'product', tag: 'Striped Tapes' },
     // Machinery & Factory Floor (ONLY valid photos)
-    { id: 'm1', path: '/assets/products/whatsapp_1.jpeg', type: 'factory', tag: 'Braiding Winder' },
-    { id: 'm2', path: '/assets/products/whatsapp_2.jpeg', type: 'factory', tag: 'Needle Loom Room' },
-    { id: 'm3', path: '/assets/products/whatsapp_3.jpeg', type: 'factory', tag: 'Weaving Loom Close-up' },
-    { id: 'm4', path: '/assets/products/whatsapp_4.jpeg', type: 'factory', tag: 'Knitting Loom' },
-    { id: 'm5', path: '/assets/details/detail_1.png', type: 'factory', tag: 'Weaving Factory Hall' },
-    { id: 'm6', path: '/assets/details/detail_20.png', type: 'factory', tag: 'CNC Control Unit' },
-    { id: 'm7', path: '/assets/details/detail_21.png', type: 'factory', tag: 'Active Looms Line' },
-    { id: 'm8', path: '/assets/details/detail_22.png', type: 'factory', tag: 'Finished Goods Warehouse' },
-    { id: 'm9', path: '/assets/details/detail_23.png', type: 'factory', tag: 'Spool Braider unit' },
-    { id: 'm10', path: '/assets/details/detail_24.png', type: 'factory', tag: 'High Speed Braiders' },
+    { id: 'm1', path: '/assets/products/whatsapp_1.webp', type: 'factory', tag: 'Braiding Winder' },
+    { id: 'm2', path: '/assets/products/whatsapp_2.webp', type: 'factory', tag: 'Needle Loom Room' },
+    { id: 'm3', path: '/assets/products/whatsapp_3.webp', type: 'factory', tag: 'Weaving Loom Close-up' },
+    { id: 'm4', path: '/assets/products/whatsapp_4.webp', type: 'factory', tag: 'Knitting Loom' },
+    { id: 'm5', path: '/assets/details/detail_1.webp', type: 'factory', tag: 'Weaving Factory Hall' },
+    { id: 'm6', path: '/assets/details/detail_20.webp', type: 'factory', tag: 'CNC Control Unit' },
+    { id: 'm7', path: '/assets/details/detail_21.webp', type: 'factory', tag: 'Active Looms Line' },
+    { id: 'm8', path: '/assets/details/detail_22.webp', type: 'factory', tag: 'Finished Goods Warehouse' },
+    { id: 'm9', path: '/assets/details/detail_23.webp', type: 'factory', tag: 'Spool Braider unit' },
+    { id: 'm10', path: '/assets/details/detail_24.webp', type: 'factory', tag: 'High Speed Braiders' },
   ];
 
   // Filtered gallery items
@@ -473,14 +473,14 @@ export default function App() {
             <div className="lg:col-span-5 grid grid-cols-12 gap-4 relative">
               <div className="col-span-12 rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[1.5/1] bg-slate-100 dark:bg-slate-950">
                 <img 
-                  src="/assets/products/whatsapp_2.jpeg" 
+                  src="/assets/products/whatsapp_2.webp" 
                   alt="PGA Factory Needle Loom Room" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
               <div className="col-span-7 col-start-6 -mt-16 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-900 aspect-[1.1/1] relative z-10 bg-slate-200 dark:bg-slate-800">
                 <img 
-                  src="/assets/details/detail_1.png" 
+                  src="/assets/details/detail_1.webp" 
                   alt="PGA Active Weaving Machine Floor" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
@@ -633,17 +633,17 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
                       {/* Main Drawcord image */}
                       <div className="sm:col-span-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.8/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord.jpg" alt="Drawcords collection" className="w-full h-full object-cover" />
+                        <img src="/assets/products/drawcord.webp" alt="Drawcords collection" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Braided Drawcords</span>
                       </div>
                       {/* Metal Ending */}
                       <div className="sm:col-span-6 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord_metal.jpg" alt="Drawcord with metal ending" className="w-full h-full object-cover" />
+                        <img src="/assets/products/drawcord_metal.webp" alt="Drawcord with metal ending" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Metal End Tips</span>
                       </div>
                       {/* Clear Plastic Ending */}
                       <div className="sm:col-span-6 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/drawcord_plastic.jpg" alt="Drawcord with clear plastic ending" className="w-full h-full object-cover" />
+                        <img src="/assets/products/drawcord_plastic.webp" alt="Drawcord with clear plastic ending" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Plastic End Tips</span>
                       </div>
                     </div>
@@ -653,12 +653,12 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
                       {/* Elastic Band */}
                       <div className="sm:col-span-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/elastic_band.jpg" alt="Elastic Band" className="w-full h-full object-cover" />
+                        <img src="/assets/products/elastic_band.webp" alt="Elastic Band" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-1 rounded-md">Elastic Band Rolls</span>
                       </div>
                       {/* Elastic Woven */}
                       <div className="sm:col-span-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/products/elastic_woven.jpg" alt="Elastic Woven" className="w-full h-full object-cover" />
+                        <img src="/assets/products/elastic_woven.webp" alt="Elastic Woven" className="w-full h-full object-cover" />
                         <span className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-1 rounded-md">Woven Elastics</span>
                       </div>
                     </div>
@@ -668,15 +668,15 @@ export default function App() {
                   {activeProductTab === 'tape' && (
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/factory/factory_1.jpg" alt="Blue ribbon tape" className="w-full h-full object-cover" />
+                        <img src="/assets/factory/factory_1.webp" alt="Blue ribbon tape" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Blue Flat Ribbon</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/factory/factory_3.jpg" alt="Checkerboard tape" className="w-full h-full object-cover" />
+                        <img src="/assets/factory/factory_3.webp" alt="Checkerboard tape" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Checkerboard Ribbon</span>
                       </div>
                       <div className="col-span-2 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[2.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_9.png" alt="Striped cotton webbings" className="w-full h-full object-cover" />
+                        <img src="/assets/details/detail_9.webp" alt="Striped cotton webbings" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Striped Cotton Webbings</span>
                       </div>
                     </div>
@@ -685,15 +685,15 @@ export default function App() {
                   {activeProductTab === 'herringbone' && (
                     <div className="grid grid-cols-2 gap-4">
                       <div className="col-span-2 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[2.4/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_6.png" alt="Herringbone twill weave close-up" className="w-full h-full object-cover" />
+                        <img src="/assets/details/detail_6.webp" alt="Herringbone twill weave close-up" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Herringbone Twill Weave</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_7.png" alt="Beige herringbone V twill pattern" className="w-full h-full object-cover" />
+                        <img src="/assets/details/detail_7.webp" alt="Beige herringbone V twill pattern" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Twill V-Pattern</span>
                       </div>
                       <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md aspect-[1.2/1] relative bg-slate-100 dark:bg-slate-950">
-                        <img src="/assets/details/detail_5.png" alt="Multi color narrow webbing spools" className="w-full h-full object-cover" />
+                        <img src="/assets/details/detail_5.webp" alt="Multi color narrow webbing spools" className="w-full h-full object-cover" />
                         <span className="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] font-bold px-2 py-0.5 rounded-md">Color Spools</span>
                       </div>
                     </div>
@@ -785,7 +785,7 @@ export default function App() {
         {/* Machine image backdrop */}
         <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
           <img 
-            src="/assets/products/whatsapp_2.jpeg" 
+            src="/assets/products/whatsapp_2.webp" 
             alt="Factory production line" 
             className="w-full h-full object-cover filter blur-[1px]" 
           />
@@ -861,14 +861,14 @@ export default function App() {
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg aspect-[1/1.2] relative bg-slate-100 dark:bg-slate-950">
                 <img 
-                  src="/assets/products/whatsapp_3.jpeg" 
+                  src="/assets/products/whatsapp_3.webp" 
                   alt="Industrial needle loom machinery" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg aspect-[1/1.2] relative bg-slate-100 dark:bg-slate-950">
                 <img 
-                  src="/assets/products/whatsapp_4.jpeg" 
+                  src="/assets/products/whatsapp_4.webp" 
                   alt="High speed knitting machine" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
@@ -939,7 +939,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/grs_page_1.jpg" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -959,7 +959,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/oeko_page_1.jpg" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -979,7 +979,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/slf_page_1.jpg" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -1236,7 +1236,7 @@ export default function App() {
                 )}
 
                 <img 
-                  src={`${certSpecs[selectedCertificate.type].base}${selectedCertificate.page}.jpg`} 
+                  src={`${certSpecs[selectedCertificate.type].base}${selectedCertificate.page}.webp`} 
                   alt={`Certificate page ${selectedCertificate.page}`} 
                   className={`max-w-full h-auto max-h-[60vh] object-contain rounded shadow-lg border border-slate-850 transition-opacity duration-300 ${certImageLoading ? 'opacity-0' : 'opacity-100'}`}
                   onLoad={() => setCertImageLoading(false)}
