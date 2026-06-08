@@ -19,17 +19,7 @@ dist/
 dist-ssr/
 build/
 
-# Python cache and virtualenvs
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.env
-.venv
-pip-log.txt
+
 
 # Local env files
 .env*.local

@@ -107,17 +107,18 @@ const useIntersectionObserver = (options = {}) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const node = elementRef.current;
     const observer = new IntersectionObserver(([entry]) => {
       setIsVisible(entry.isIntersecting);
     }, options);
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, [options]);
@@ -286,7 +287,7 @@ export default function App() {
           {/* Corporate Logo with High-Res Image Card */}
           <a href="#home" className="flex items-center gap-3">
             <div className="h-11 w-11 rounded-xl bg-white overflow-hidden shadow-lg border border-slate-200/50 flex items-center justify-center p-1.5">
-              <img src="/assets/logo.png" alt="PT. PGA Logo" className="w-full h-full object-contain" />
+              <img src="/assets/logo.webp" alt="PT. PGA Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className={`font-outfit font-extrabold text-xl leading-tight tracking-tight transition-colors duration-300 ${navScrolled ? 'text-slate-900 dark:text-white' : 'text-white dark:text-white'}`}>
@@ -334,6 +335,7 @@ export default function App() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
               className={`p-2 lg:hidden rounded-lg hover:bg-slate-100/10 transition-colors ${navScrolled ? 'text-slate-800 dark:text-white' : 'text-white dark:text-white'}`}
             >
               {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
@@ -450,6 +452,7 @@ export default function App() {
                 {heroSlides.map((_, idx) => (
                   <button 
                     key={idx}
+                    aria-label={`Go to slide ${idx + 1}`}
                     onClick={() => setHeroSlideIdx(idx)}
                     className={`h-2 rounded-full transition-all ${heroSlideIdx === idx ? 'w-6 bg-pga-blue' : 'w-2 bg-slate-600'}`}
                   />
@@ -475,6 +478,7 @@ export default function App() {
                 <img 
                   src="/assets/products/whatsapp_2.webp" 
                   alt="PGA Factory Needle Loom Room" 
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -482,6 +486,7 @@ export default function App() {
                 <img 
                   src="/assets/details/detail_1.webp" 
                   alt="PGA Active Weaving Machine Floor" 
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -575,10 +580,7 @@ export default function App() {
                       : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                 >
-                  {lang === 'en' ? t(`products.categories.${tab}`) : 
-                   tab === 'drawcord' ? '抽绳' :
-                   tab === 'tape' ? '织带' :
-                   tab === 'elastic' ? '松紧带' : '人字带'}
+                  {t(`products.categories.${tab}`)}
                 </button>
               ))}
             </div>
@@ -755,6 +757,7 @@ export default function App() {
                   <img 
                     src={item.path} 
                     alt={item.tag} 
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
                   {/* Hover overlay */}
@@ -787,6 +790,7 @@ export default function App() {
           <img 
             src="/assets/products/whatsapp_2.webp" 
             alt="Factory production line" 
+            loading="lazy"
             className="w-full h-full object-cover filter blur-[1px]" 
           />
         </div>
@@ -863,6 +867,7 @@ export default function App() {
                 <img 
                   src="/assets/products/whatsapp_3.webp" 
                   alt="Industrial needle loom machinery" 
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -870,6 +875,7 @@ export default function App() {
                 <img 
                   src="/assets/products/whatsapp_4.webp" 
                   alt="High speed knitting machine" 
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
               </div>
@@ -939,7 +945,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/grs_page_1.webp" alt={t('certs.grsTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -959,7 +965,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/oeko_page_1.webp" alt={t('certs.oekoTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -979,7 +985,7 @@ export default function App() {
               className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-850 shadow-lg flex flex-col hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 bg-white cursor-pointer group"
             >
               <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm aspect-[1/1.3] relative bg-slate-100 dark:bg-slate-950 mb-4">
-                <img src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/assets/certs/slf_page_1.webp" alt={t('certs.slfTitle')} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="flex items-center gap-2 text-white bg-pga-blue/90 font-bold text-xs px-4 py-2 rounded-xl backdrop-blur-sm shadow-md">
                     <ZoomInIcon />
@@ -1161,7 +1167,7 @@ export default function App() {
           <div className="md:col-span-5 flex flex-col items-start">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-10 w-10 rounded-lg bg-white overflow-hidden p-1.5 flex items-center justify-center">
-                <img src="/assets/logo.png" alt="PT. PGA Logo" className="w-full h-full object-contain" />
+                <img src="/assets/logo.webp" alt="PT. PGA Logo" className="w-full h-full object-contain" />
               </div>
               <span className="font-outfit font-bold text-lg text-white">PT. Perfect Garment Accessories</span>
             </div>
@@ -1238,6 +1244,7 @@ export default function App() {
                 <img 
                   src={`${certSpecs[selectedCertificate.type].base}${selectedCertificate.page}.webp`} 
                   alt={`Certificate page ${selectedCertificate.page}`} 
+                  loading="lazy"
                   className={`max-w-full h-auto max-h-[60vh] object-contain rounded shadow-lg border border-slate-850 transition-opacity duration-300 ${certImageLoading ? 'opacity-0' : 'opacity-100'}`}
                   onLoad={() => setCertImageLoading(false)}
                 />
@@ -1276,6 +1283,7 @@ export default function App() {
                     {Array.from({ length: certSpecs[selectedCertificate.type].total }).map((_, i) => (
                       <button 
                         key={i}
+                        aria-label={`Go to certificate page ${i + 1}`}
                         onClick={() => { setSelectedCertificate({ type: selectedCertificate.type, page: i + 1 }); setCertImageLoading(true); }}
                         className={`h-2 rounded-full transition-all ${selectedCertificate.page === i + 1 ? 'w-4 bg-pga-blue' : 'w-2 bg-slate-700'}`}
                       />
@@ -1317,6 +1325,7 @@ export default function App() {
                 <img 
                   src={selectedGalleryItem.path} 
                   alt={selectedGalleryItem.tag} 
+                  loading="lazy"
                   className="max-w-full h-auto max-h-[80vh] object-contain rounded shadow-2xl" 
                 />
               </div>

@@ -145,8 +145,6 @@ export const translations = {
       formSubmit: "Send Message",
       formSuccess: "Thank you! Your message has been sent. We will get back to you shortly.",
       contactPersons: "Contact Persons",
-      wechatQR: "WeChat Scan",
-      wechatInstructions: "Scan our WeChat QR code to connect directly with our sales team for instant support.",
       sumedangFactory: "Sumedang Factory",
       quickLinks: "Quick Links"
     }
@@ -297,8 +295,6 @@ export const translations = {
       formSubmit: "发送信息",
       formSuccess: "谢谢！您的留言已成功发送。我们会尽快回复您。",
       contactPersons: "联络负责人",
-      wechatQR: "微信扫码",
-      wechatInstructions: "扫描我们的微信二维码，直接与我们的销售团队联系，获取即时支持。",
       sumedangFactory: "苏美当工厂",
       quickLinks: "快速链接"
     }
